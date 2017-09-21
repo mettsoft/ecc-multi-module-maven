@@ -1,0 +1,55 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ecc.multi</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<properties>
+    	<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+	<modules>
+		<module>app</module>
+		<module>model</module>
+		<module>service</module>
+		<module>util</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>		
+			<dependency>
+			    <groupId>com.ecc.multi</groupId>
+			    <artifactId>service</artifactId>
+			    <version>${project.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>com.ecc.multi</groupId>
+			    <artifactId>model</artifactId>
+			    <version>${project.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>com.ecc.multi</groupId>
+			    <artifactId>util</artifactId>
+			    <version>${project.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-lang3</artifactId>
+			    <version>3.6</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+			    	<version>3.0.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
